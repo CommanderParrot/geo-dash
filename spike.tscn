@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bddh40io1vcun"]
+
+[ext_resource type="Script" uid="uid://cpoiqj77pbhq2" path="res://spike.gd" id="1_8ryga"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pe76i"]
+size = Vector2(13, 9.5)
+
+[node name="Spike" type="Area2D" unique_id=225980551]
+script = ExtResource("1_8ryga")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1144901295]
+position = Vector2(-1.5, 29.25)
+shape = SubResource("RectangleShape2D_pe76i")
+
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D" unique_id=362244382]
+offset_left = -18.5
+offset_top = 5.75
+offset_right = 21.5
+offset_bottom = 15.75
+color = Color(0.47843137, 0.6862745, 0.4117647, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1743436454]
+offset_left = -11.0
+offset_top = 23.0
+offset_right = 9.0
+offset_bottom = 35.0
+color = Color(0.32156864, 0.85882354, 1, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1449571723]
+offset_left = -5.0
+offset_top = 12.0
+offset_right = 5.0
+offset_bottom = 32.0
+color = Color(0.5254902, 0.8392157, 0.9529412, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
